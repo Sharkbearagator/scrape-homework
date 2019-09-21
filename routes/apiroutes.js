@@ -1,7 +1,7 @@
 // Scraping tools
 const axios = require("axios");
 const cheerio = require("cheerio");
-const db = require("../models");
+const db = require("../modules");
 
 
     // Routes
@@ -110,7 +110,7 @@ const db = require("../models");
           db.Note.create({ noteText: req.body.noteText })
           .then(function(dbNote){
             console.log('dbNote:' + dbNote)
-            return db.Article.findOneAndUpdate({ _id:req.body._headlineId}, 
+            return db.article.findOneAndUpdate({ _id:req.body._headlineId}, 
             { $push: {note: dbNote._id} }, 
             {new: true})
           })
