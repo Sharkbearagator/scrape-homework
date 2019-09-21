@@ -1,0 +1,29 @@
+
+<div id="expand-box">
+    <div class="wrapper">
+        <article class="content">
+            <div class="panel">
+                <div id="handlebars-sandbox">
+                    {{#if article}}
+                    {{#each article}}
+                    <div class="card mb-3" data-_id="{{this._id}}" id="media">
+                        <a href="{{this.url}}">
+                            <img src="{{this.picture}}" class="card-img-top" alt="..." id="article-pic">
+                            <div class="card-body">
+                                <h5 class="card-title">{{this.headline}}</h5>
+                        </a>
+                        <p class="card-text">{{this.summary}}</p>
+                        <p class="card-text"><small class="text-muted">{{this.date}}</small></p>
+                        <a href="{{this.url}}" class="card-link">Read More</a>
+                        <div id="save-article">Save Article</div>
+                        </p>
+                    </div>
+                </div>
+                {{/each}}
+                {{else}}
+                <div class="message">Click the "SCRAPE NEW ARTICLES" button to get started.</div>
+                {{/if}}
+            </div>
+        </article>
+    </div>
+</div>

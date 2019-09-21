@@ -29,9 +29,6 @@ const ArticleSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  picture: {
-    type: String
-  },
   
   // This allows us to populate the Article with an associated Note
   note: [{
